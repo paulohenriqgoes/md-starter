@@ -1,0 +1,67 @@
+html, body {
+  font-family: 'Roboto', sans serif;
+  font-size: 14px;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+md-toolbar h3 {
+  margin: auto;
+  font-weight: 500;
+}
+
+md-list-item > button {
+  width: 100%;
+  text-align: left !important;
+  font-weight: bolder !important;
+}
+
+#content {
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 5px;
+}
+
+.avatar {
+  position: relative;
+  width: 128px;
+  height: 128px;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  display: inline-block;
+  overflow: hidden;
+  margin: 0px;
+  vertical-align: middle;
+  zoom:0.70;
+  transform: translateZ(0);
+  -webkit-transform: scale(0.70);
+  -moz-transform: scale(0.70);
+}
+
+.share {
+  position: absolute;
+  top: 24px;
+  right: 0;
+}
+
+.share md-icon {
+  color: #000;
+}
+
+.name {
+  font-weight: bolder;
+}
+
+md-bottom-sheet > md-list {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  align-items: baseline;
+  overflow-x: auto;
+}
+
+
+md-bottom-sheet > md-list > md-list-item {
+  padding: 0 5px;
+}

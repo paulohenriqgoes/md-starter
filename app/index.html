@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+  </head>
+  <body ng-app="cursoMdApp" layout="column" ng-controller="UserCtrl as ul">
+    <!--[if lte IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <md-toolbar layout="row">
+      <md-button class="menu" ng-click="ul.toggleList();" hide-gt-sm>
+        <md-icon md-svg-icon="menu"></md-icon>
+      </md-button>
+      <h3>Angular material starter</h3>
+    </md-toolbar>
+
+    <div class="container" layout="row" flex>
+      <md-sidenav md-is-locked-open="$mdMedia('gt-sm')" class="md-whiteframe-4dp" md-component-id="left">
+        <md-list>
+          <md-list-item ng-repeat="u in ul.users">
+            <md-button ng-click="ul.selectUser(u)">
+              <md-icon md-svg-src="images/{{u.avatar}}.svg" class="avatar"></md-icon>
+              {{u.name}}
+            </md-button>
+          </md-list-item>
+        </md-list>
+      </md-sidenav>
+
+      <md-content id="content" flex>
+        <md-icon md-svg-src="images/{{ul.selected.avatar}}.svg" class="avatar"></md-icon>
+        <h2>{{ul.selected.name}}</h2>
+        <p>{{ul.selected.content}}</p>
+        <md-button class="share md-icon-button" md-no-ink aria-label="Share" ng-click="ul.share(ul.selected)">
+          <md-icon md-svg-icon="share"></md-icon>
+        </md-button>
+      </md-content>
+    </div>
+
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/services/userservice.js"></script>
+        <script src="scripts/controllers/user.js"></script>
+        <!-- endbuild -->
+</body>
+</html>
